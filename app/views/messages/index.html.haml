@@ -1,57 +1,35 @@
 .flash
   グループを作成しました
 .wrapper
-  .chat-side
-    .side-header
-      .side-header__box
-        %h2.side-header__box__user-name
-          dd
-        %ul.side-header__box__menu
-          =link_to "//", class: "side-header__box__menu__new-group" do
-            =fa_icon 'pencil-square-o'
-          =link_to "//", class: "side-header__box__menu__edit-user" do
-            =fa_icon 'cog'
-    .groups
-      .group
-        %p.group__group-name
-          w
-        %p.group__latest-message
-          djshclknjh
-          .group
-        %p.group__group-name
-          w
-        %p.group__latest-message
-          djshclknjh
+  = render "shared/side_bar"
   .chat-main
     .main-header
       .main-header__left-box
         %h2.main-header__left-box__current-group
-          w
-        %h2.main-header__left-box__member-list
-          Menber
+          = @group.name
+        %ul.main-header__left-box__member-list
+          menber : 
+          -@group.users.each do |user|
+            %li.main-header__left-box__member-list__menber
+            =user.name
 
       = link_to "",class: "main-header__edit-btn" do
         Edit
     .messages
+      = render @messages
       .message
         .message__upper-info
-          .message__upper-info
-            %p.message__upper-info__talker
-              dd
-            %p.message__upper-info__date
-              2019/11/05
-        %p.message__text
-          ygohuig7iypoi
+          %p.message__upper-info__talker
+            dd
+          %p.message__upper-info__date
+            2019/11/05
+            %p.message__text
+              ygohuig7iypoi
     .form
-      .forms
-        .input-box
-          %input.input-box__text
-          = link_to "",class: "input-box__image" do
-            =fa_icon 'photo'
-        = link_to "",class: "submit-btn" do
-          Send
-
-
-
-
-  
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        = f.label :image, class: 'forms__image' do
+          = fa_icon 'photo'
+          = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: "submit-btn"
+        
