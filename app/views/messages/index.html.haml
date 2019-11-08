@@ -13,7 +13,7 @@
             %li.main-header__left-box__member-list__menber
             =user.name
 
-      = link_to "",class: "main-header__edit-btn" do
+      = link_to edit_group_path(@group),class: "main-header__edit-btn" do
         Edit
     .messages
       = render @messages
