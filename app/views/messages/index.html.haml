@@ -20,11 +20,8 @@
       .message
         .message__upper-info
           %p.message__upper-info__talker
-            dd
           %p.message__upper-info__date
-            2019/11/05
             %p.message__text
-              ygohuig7iypoi
     .form
       = form_for [@group, @message] do |f|
         = f.text_field :content, class: 'form__message', placeholder: 'type a message'
