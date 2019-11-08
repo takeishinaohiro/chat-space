@@ -5,6 +5,7 @@
 }
 *{
   box-sizing: border-box;
+  text-decoration: none;
 }
 .wrapper{
   display: flex;
@@ -54,13 +55,10 @@
           font-size: 15px;
           margin-bottom: 5px;
           color: white;
-          text-decoration: none;
         }
         &__latest-message{
           font-size: 11px;
           color: white;
-          text-decoration: none;
-
         }
       }
     }
