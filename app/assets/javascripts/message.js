@@ -1,6 +1,6 @@
 $(function(){
   function buildHTML(comment){
-    let image = `<img class="lower-message__image" src="/uploads/message/image/55/IMG_2020.JPG" alt="Img 2020" />`
+    let image = `<img class="lower-message__image" src="${comment.image}" alt="Img 2020" />`
     let html = `<div class='message'>
     <div class='upper-message'>
     <div class='upper-message__user-name'>
@@ -14,14 +14,12 @@ $(function(){
     <p class='lower-message__content'>
     ${comment.content}
     </p>
-    
+    ${image}
     </div>
     </div>`
     return html;
   }
   $('.new_message').on('submit', function(e){
-    e.preventDefault()
-    console.log('発火');
     let formData = new FormData(this);
     let url = $(this).attr('action');
     $.ajax({
