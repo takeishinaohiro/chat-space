@@ -115,11 +115,12 @@
       height: calc(100vh - 190px);
       overflow: scroll;
       .message{
-        &__upper-info{
+        padding-bottom: 40px;
+        .upper-message{
           display: flex;
           margin-bottom: 10px;
 
-          &__talker{
+          &__user-name{
             color: #434a54;
             font-size: 16;
             font-weight: bold;
@@ -130,7 +131,7 @@
             margin-left: 10px;
           }
         }
-        &__text{
+        .lower-message{
           color: #434a54;
           font-size: 14px;
           margin-bottom: 10px;
