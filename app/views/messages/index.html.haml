@@ -17,11 +17,11 @@
         Edit
     .messages
       = render @messages
-      .message
-        .message__upper-info
-          %p.message__upper-info__talker
-          %p.message__upper-info__date
-            %p.message__upper-info__date__text
+      -# .message
+      -#   .message__upper-info
+      -#     %p.message__upper-info__talker
+      -#     %p.message__upper-info__date
+      -#       %p.message__upper-info__date__text
     .form
       = form_for [@group, @message] do |f|
         = f.text_field :content, class: 'form__message', placeholder: 'type a message'
